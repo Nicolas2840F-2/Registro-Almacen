@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.titulo-principal {
+    font-size: 50px;
+    padding: 40px;
+    text-shadow: 3px 1px 4px #0ea5e9;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.links {
+    text-shadow: 3px 1px 4px #0ea5e9;
+    padding-top: 2px;
+}
+.caja:focus {
+    box-shadow: 1px 2px 4px 2px #082f49;
+}
+.invalido {
+    box-shadow: 1px 0.5px 5px 2.5px #f43f5e;
+}
+.tituloReset {
+    text-shadow: 3px 1px 4px rgb(0, 0, 0);
+}
+.principal {
+    box-shadow: 1px 1px 20px 3px #082f49;
+}
+
+.contenedor__tabla {
+    box-shadow: 0px 5px 9px -5px black;
+}
+table,
+th,
+tr,
+td {
+    border: 1px solid black;
+    padding: 0.3rem 5px;
+}
+
+.contenedor_menu {
+    .button {
+        box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
+
+        .line {
+            transition: all 0.3s ease;
+
+            &:nth-child(1) {
+                top: 0;
+                transform: rotate(0);
+                transition: top 0.2s ease, transform 0.4s ease;
+            }
+
+            &:nth-child(2) {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &:nth-child(3) {
+                top: 0;
+                transform: rotate(0);
+                transform: top 0.2s ease, transform 0.4s ease;
+            }
+        }
+
+        &.active {
+            .line:nth-child(1) {
+                top: 12px;
+                transform: rotate(45deg);
+            }
+
+            .line:nth-child(2) {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .line:nth-child(3) {
+                top: -10px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .ventana {
+        height: -webkit-fill-available;
+        transition: all 0.5s;
+        min-width: 300px;
+        visibility: hidden;
+
+        &.active {
+            right: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
