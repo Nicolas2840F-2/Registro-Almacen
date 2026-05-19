@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TipoDocumento extends Model
 {
     protected $guarded = [];
-    protected $table = "tipoDocumentos";
+    protected $table = "tipodocumentos";
     protected $primaryKey = 'idTipoDocumento';
     
     use HasFactory;

@@ -12,14 +12,14 @@ class tipoDocumentoController extends Controller
     public function index()
     {
 
-        $tipoDocumentos = DB::table("tipoDocumentos")->get();
+        $tipoDocumentos = DB::table("tipodocumentos")->get();
 
         return view("tipoDocumentos.index", ['tipoDocumentos' => $tipoDocumentos]);
     }
 
     public function listarSelect()
     {
-        $tipoDocumentos = DB::table("tipoDocumentos")->get();
+        $tipoDocumentos = DB::table("tipodocumentos")->get();
 
         return view("registerUser", ['tipoDocumentos' => $tipoDocumentos]);
     }
@@ -29,7 +29,7 @@ class tipoDocumentoController extends Controller
             'descripcionTipoDocumento' => 'required'
         ]);
 
-        DB::statement('ALTER TABLE tipoDocumentos AUTO_INCREMENT = 1');
+        DB::statement('ALTER TABLE tipodocumentos AUTO_INCREMENT = 1');
 
         TipoDocumento::create([
             'descripcionTipoDocumento' => $request->descripcionTipoDocumento
@@ -71,7 +71,7 @@ class tipoDocumentoController extends Controller
 
     public function show()
     {
-        $tipoDocumentos = DB::table("tipoDocumentos")->get();
+        $tipoDocumentos = DB::table("tipodocumentos")->get();
 
         return $tipoDocumentos;
     }
